@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resume Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('static/bgdd.jpg');
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 20px;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        .resume-info {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        p {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        p:first-child {
+            margin-top: 0;
+        }
+        .skills, .education {
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <h2><font color="silver">Resume Information</font></h2>
+    <div class="resume-info">
+        
+        <p><strong>Name:</strong> {{ name }}</p>
+        <p><strong>Contact Number:</strong> {{ contact_number }}</p>
+        <p><strong>Email:</strong> {{ email }}</p>
+        <p><strong>Skills:</strong> <span class="skills">{% for skill in skills %}{{ skill }}{% if not loop.last %}, {% endif %}{% endfor %}</span></p>
+        <p><strong>Education:</strong> <span class="education">{% for edu in education %}{{ edu }}{% if not loop.last %}, {% endif %}{% endfor %}</span></p>
+    </div>
+</body>
+</html>

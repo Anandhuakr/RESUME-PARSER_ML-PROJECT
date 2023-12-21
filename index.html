@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Resume</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url('static/bd.jpg'); /* Replace 'static/bg.jpg' with the path to your image */
+            background-size: cover;
+            background-position: center;
+        }
+        h1 {
+            margin-top: -70px; /* Adjust the margin as needed */
+            text-align: center;
+        }
+        .upload-form {
+            margin-top: 10px; /* Adjust the margin as needed */
+            width: 400px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.7); /* Set the transparency here (0.7) */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            margin-bottom: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1><font color="silver">Resume Parser</font></h1>
+    <div class="upload-form">
+        <h2>Upload Your Resume</h2>
+        <form action="/result" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="resume">Choose a PDF file:</label>
+                <input type="file" class="form-control-file" id="resume" name="resume" accept=".pdf">
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
+
